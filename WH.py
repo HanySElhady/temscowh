@@ -32,7 +32,7 @@ if f1 is not None:
     st.write(filename)
     df=pd.read_excel(filename)
 else:
-    df.read_excel("Pipeline-Final.xlsx")
+    sys.stop()
 
 st.write('## Dataframe :')
 st.write(df)
