@@ -26,12 +26,13 @@ with header:
 st.markdown('<style>div.block-container{padding-top:3rem;}</style>',unsafe_allow_html=True)
 
 # Read DataFrame directly from the file
-filename = "Pipeline-Final.xlsx"
-if st.file_uploader is None:
-    df = pd.read_excel(filename)
+f1=st.file_uploader(":file_folder: Upload a file ",type=(["csv","xlsx","xls"]))
+if f1 is not None:
+    filename=f1.name
+    st.write(filename)
+    df=pd.read_excel(filename)
 else:
-    st.warning("Please upload a file to start filtering the DataFrame.")
-    st.stop()
+    df.read_excel("Pipeline-Final.xlsx")
 
 st.write('## Dataframe :')
 st.write(df)
