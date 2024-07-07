@@ -31,8 +31,7 @@ if f1 is not None:
     filename=f1.name
     st.write(filename)
     df=pd.read_excel(filename)
-#else:
-   # sys.stop()
+
 
 st.write('## Dataframe :')
 st.write(df)
